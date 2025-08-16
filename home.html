@@ -70,7 +70,7 @@
             border-bottom: 1px solid var(--light-gray);
         }
         .header-content { display: flex; justify-content: space-between; align-items: center; }
-        .header-logo { max-width: 220px; height: auto; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
         .desktop-nav { display: flex; align-items: center; gap: 40px; }
         .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
         .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
@@ -198,15 +198,73 @@
         /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 900px) {
             .desktop-nav { display: none; }
+            
+            .header-logo {
+                max-width: 160px;
+            }
+
             .hamburger-menu {
                 display: block; cursor: pointer; border: none; background: transparent;
                 z-index: 1001; position: relative; width: 30px; height: 21px;
             }
             .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
-            .hero-title { font-size: 2.8em; }
+            
+            .hero-title { 
+                font-size: 2.6em; 
+            }
+
             .section { padding: 60px 0; }
-            .section-title { font-size: 2.2em; }
+            
+            .section-title { 
+                font-size: 2.1em; 
+            }
+
             .philosophy-content { flex-direction: column-reverse; }
+
+            .mobile-nav a {
+                font-size: 2em; 
+            }
+
+            .mobile-nav ul {
+                gap: 25px;
+            }
+
+            .mobile-nav .btn {
+                padding: 18px;
+                font-size: 1.1em;
+            }
+            
+            /* =================================================================== */
+            /* AJUSTES FINALES PARA LA VISUALIZACIÓN MÓVIL */
+            /* =================================================================== */
+            
+            /* AJUSTE 1: Imagen de la tarjeta más pequeña en móvil */
+            .service-card-image {
+                height: 200px;
+            }
+
+            /* AJUSTE 2: Contenido de las tarjetas de servicio más pequeño */
+            .service-card-content {
+                padding: 20px 25px; /* Menos padding */
+            }
+            .service-card-title {
+                font-size: 1.6em; /* Título de la tarjeta más pequeño */
+            }
+            .service-card-content p {
+                font-size: 0.95em; /* Descripción de la tarjeta más pequeña */
+                line-height: 1.6;
+            }
+
+            /* AJUSTE 3: Botón del menú móvil más refinado */
+            .mobile-nav .btn {
+                font-size: 1.2em; /* Un poco más grande para mejor legibilidad */
+                font-weight: 600; /* Texto un poco más grueso */
+            }
+            
+            /* AJUSTE 4: Subtítulos de sección un poco más pequeños */
+            .section-subtitle {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -214,9 +272,6 @@
 
     <header>
         <div class="container header-content">
-            <!-- =================================================================== -->
-            <!-- ARREGLO 1: LOGO - El href se cambió a "#" para ir al inicio de la página. -->
-            <!-- =================================================================== -->
             <a href="#">
                 <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
             </a>
@@ -226,9 +281,6 @@
                     <li><a href="#philosophy">Filosofía</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
-                <!-- =================================================================== -->
-                <!-- ARREGLO 2: BOTÓN DESKTOP - Se añadió target="_blank" para abrir en nueva pestaña. -->
-                <!-- =================================================================== -->
                 <a href="https://renalmamasajes.github.io/files/agenda.html#step-1" class="btn" target="_blank" rel="noopener noreferrer">Agendar Cita</a>
             </nav>
             <button class="hamburger-menu" id="hamburger-menu">
@@ -249,9 +301,6 @@
             <li><a href="#philosophy">Filosofía</a></li>
             <li><a href="#contact">Contacto</a></li>
         </ul>
-        <!-- =================================================================== -->
-        <!-- ARREGLO 3: BOTÓN MÓVIL - Se añadió target="_blank" para abrir en nueva pestaña. -->
-        <!-- =================================================================== -->
         <a href="https://renalmamasajes.github.io/files/agenda.html#step-1" class="btn" target="_blank" rel="noopener noreferrer">Agendar Cita</a>
     </nav>
 
@@ -262,9 +311,6 @@
                 <p class="hero-subtitle">
                     Descubre un espacio sagrado para reconectar con tu esencia, liberar las cargas y nutrir tu alma a través de masajes y terapias diseñadas para ti.
                 </p>
-                <!-- =================================================================== -->
-                <!-- ARREGLO 4: BOTÓN HERO - Se añadió target="_blank" para abrir en nueva pestaña. -->
-                <!-- =================================================================== -->
                 <a href="https://renalmamasajes.github.io/files/agenda.html#step-1" class="btn" target="_blank" rel="noopener noreferrer">Reserva tu Momento</a>
             </div>
             <a href="#services" class="scroll-indicator">
